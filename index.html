@@ -1,9 +1,84 @@
-<html>
-  <head>
-    <title>Tom's Site</title>
-  </head>
-  <body>
-    <h1>AYYY I made a website</h1>
-    <p>Thomas Cornell.</p>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tom's Links</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      font-family: Arial, sans-serif;
+      background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+      background-color: #8b5e3c;
+      background-repeat: repeat;
+      color: #fff;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .list-section {
+      width: 300px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      border-bottom: 1px solid #fff;
+      padding-bottom: 5px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    li {
+      margin: 10px 0;
+    }
+
+    a {
+      color: #ffd700;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tom's Links</h1>
+  <div class="container">
+    <div class="list-section">
+      <h2>Tech Resources</h2>
+      <ul>
+        <li><a href="https://github.com">GitHub</a></li>
+        <li><a href="https://stackoverflow.com">Stack Overflow</a></li>
+        <li><a href="https://learn.microsoft.com">Microsoft Learn</a></li>
+      </ul>
+    </div>
+
+    <div class="list-section">
+      <h2>Personal Favorites</h2>
+      <ul>
+        <li><a href="https://youtube.com">YouTube</a></li>
+        <li><a href="https://reddit.com">Reddit</a></li>
+        <li><a href="https://open.spotify.com">Spotify</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
 </html>
