@@ -6,26 +6,36 @@
   <title>Thomas Cornell</title>
   <style>
     body {
-  margin: 0;
-  padding: 40px;
-  font-family: Arial, sans-serif;
-  background-image: url('background3.jpg');
-  background-color: #8b5e3c; /* fallback color if image fails to load */
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  min-height: 100vh;
-  color: #fff;
-}
+      margin: 0;
+      padding: 40px;
+      font-family: Arial, sans-serif;
+      background-image: url('background3.jpg');
+      background-color: #8b5e3c;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      color: #fff;
+    }
+
+    .header-box {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      max-width: 400px;
+      margin: 0 auto 40px auto;
+      text-align: center;
+    }
 
     h1 {
-      text-align: center;
-      margin-bottom: 40px;
+      margin: 0;
     }
 
     .container {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
+      gap: 40px;
       flex-wrap: wrap;
     }
 
@@ -53,7 +63,7 @@
     }
 
     a {
-      color: #ffd700;
+      color: #fff;
       text-decoration: none;
     }
 
@@ -63,13 +73,26 @@
   </style>
 </head>
 <body>
-  <h1>Thomas Cornell</h1>
+  <div class="header-box">
+    <h1>Thomas Cornell</h1>
+  </div>
+
   <div class="container">
+    <!-- Links section (left) -->
     <div class="list-section">
       <h2>Links</h2>
       <ul>
         <li><a href="https://www.linkedin.com/in/thcornell/">LinkedIn</a></li>
         <li><a href="https://github.com/thcornell">GitHub</a></li>
+      </ul>
+    </div>
+
+    <!-- Projects section (right) -->
+    <div class="list-section">
+      <h2>Projects</h2>
+      <ul>
+        <li><a href="#">Project 1 (Coming Soon)</a></li>
+        <li><a href="#">Project 2 (Coming Soon)</a></li>
       </ul>
     </div>
   </div>
