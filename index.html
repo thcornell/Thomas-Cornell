@@ -1,85 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" /> <!-- Sets the character encoding to UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Ensures mobile responsiveness -->
   <title>Thomas Cornell</title>
   <style>
+    /* === Base Body Styling === */
     body {
-  margin: 0;
-  padding: 40px;
-  font-family: Arial, sans-serif;
-  background-image: url('background3.jpg');
-  background-color: #8b5e3c;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; /* This keeps the background still */
-  min-height: 100vh;
-  color: #fff;
-}
+      margin: 0; /* Removes default margin */
+      padding: 40px; /* Adds space inside the body content */
+      font-family: Arial, sans-serif; /* Sets the font */
+      background-image: url('background3.jpg'); /* Loads your custom background image */
+      background-color: #8b5e3c; /* Fallback background color if image doesn't load */
+      background-repeat: no-repeat; /* Prevents the image from repeating */
+      background-size: cover; /* Scales image to cover entire background */
+      background-position: center; /* Centers the background image */
+      background-attachment: fixed; /* Keeps background still when scrolling */
+      min-height: 100vh; /* Ensures body is at least the height of the viewport */
+      color: #fff; /* Sets default text color to white */
+    }
 
+    /* === Header Container Box === */
     .header-box {
-      background: rgba(0, 0, 0, 0.4);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      max-width: 400px;
-      margin: 0 auto 40px auto;
-      text-align: center;
+      background: rgba(0, 0, 0, 0.4); /* Semi-transparent black background */
+      padding: 20px; /* Space inside the box */
+      border-radius: 10px; /* Rounded corners */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Subtle shadow around the box */
+      max-width: 400px; /* Maximum width of the box */
+      margin: 0 auto 40px auto; /* Center horizontally and space below */
+      text-align: center; /* Center the text inside */
     }
 
     h1 {
-      margin: 0;
+      margin: 0; /* Removes default margin from the heading */
     }
 
+    /* === Flexbox Container for Link and Project Boxes === */
     .container {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
+      display: flex; /* Enables flexbox layout */
+      justify-content: center; /* Centers the items horizontally */
+      gap: 40px; /* Space between flex items */
+      flex-wrap: wrap; /* Allows items to wrap on smaller screens */
     }
 
+    /* === Reusable Section Box Styling (for both Links and Projects) === */
     .list-section {
-      width: 300px;
-      background: rgba(0, 0, 0, 0.4);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      margin-bottom: 20px;
+      width: 300px; /* Fixed width for each box */
+      background: rgba(0, 0, 0, 0.4); /* Semi-transparent black background */
+      padding: 20px; /* Space inside the box */
+      border-radius: 10px; /* Rounded corners */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow around the box */
+      margin-bottom: 20px; /* Space below for wrapping */
     }
 
     h2 {
-      border-bottom: 1px solid #fff;
-      padding-bottom: 5px;
+      border-bottom: 1px solid #fff; /* Adds a line under the heading */
+      padding-bottom: 5px; /* Space between heading text and line */
     }
 
     ul {
-      list-style-type: none;
-      padding-left: 0;
+      list-style-type: none; /* Removes bullet points */
+      padding-left: 0; /* Removes default left padding */
     }
 
     li {
-      margin: 10px 0;
+      margin: 10px 0; /* Space between list items */
     }
 
     a {
-      color: #fff;
-      text-decoration: none;
+      color: #fff; /* Link color set to white */
+      text-decoration: none; /* Removes underline by default */
     }
 
     a:hover {
-      text-decoration: underline;
+      text-decoration: underline; /* Underline links when hovered */
     }
   </style>
 </head>
 <body>
+  <!-- Header Section with Name -->
   <div class="header-box">
     <h1>Thomas Cornell</h1>
   </div>
 
+  <!-- Main Content Section with Links and Projects -->
   <div class="container">
-    <!-- Links section (left) -->
+    <!-- Links Section -->
     <div class="list-section">
       <h2>Links</h2>
       <ul>
@@ -88,7 +94,7 @@
       </ul>
     </div>
 
-    <!-- Projects section (right) -->
+    <!-- Projects Section -->
     <div class="list-section">
       <h2>Projects</h2>
       <ul>
