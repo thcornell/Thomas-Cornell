@@ -1,1 +1,1 @@
-This is my first attmept at building a website using HTML
+This is my first attempt at building a website using HTML
