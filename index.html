@@ -1,308 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/png" href="icon.png">
-  <meta charset="UTF-8" /> <!-- Sets the character encoding to UTF-8 -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Ensures mobile responsiveness -->
-  <title>Thomas Cornell</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="A.Roth Landscaping LLC serves Dutchess County with mowing, mulching, hedge trimming, hauling, cleanups, and landscape design." />
-  <title>A.Roth Landscaping LLC | Dutchess County Landscaping</title>
-  <style>
-    /* === Base Body Styling === */
-    :root {
-      --green-900: #1f3a25;
-      --green-700: #2f5f3b;
-      --green-500: #4d8a59;
-      --green-100: #f2f7f2;
-      --text-dark: #203026;
-      --white: #ffffff;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0; /* Removes default margin */
-      padding: 40px; /* Adds space inside the body content */
-      font-family: Arial, sans-serif; /* Sets the font */
-      background-image: url('background3.jpg'); /* Loads your custom background image */
-      background-color: #000000; /* fallback color changed to black */
-      background-repeat: no-repeat; /* Prevents the image from repeating */
-      background-size: cover; /* Scales image to cover entire background */
-      background-position: center; /* Centers the background image */
-      background-attachment: fixed; /* Keeps background still when scrolling */
-      min-height: 100vh; /* Ensures body is at least the height of the viewport */
-      color: #fff; /* Sets default text color to white */
-    }
-
-    /* === Header Container Box === */
-    .header-box {
-      background: rgba(0, 0, 0, 0.4); /* Semi-transparent black background */
-      padding: 20px; /* Space inside the box */
-      border-radius: 10px; /* Rounded corners */
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Subtle shadow around the box */
-      max-width: 400px; /* Maximum width of the box */
-      margin: 0 auto 40px auto; /* Center horizontally and space below */
-      text-align: center; /* Center the text inside */
-    }
-
-    h1 {
-      margin: 0; /* Removes default margin from the heading */
-    }
-
-    /* === Flexbox Container for Link and Project Boxes === */
-    .container {
-      display: flex; /* Enables flexbox layout */
-      justify-content: center; /* Centers the items horizontally */
-      gap: 40px; /* Space between flex items */
-      flex-wrap: wrap; /* Allows items to wrap on smaller screens */
-    }
-
-    /* === Reusable Section Box Styling (for both Links and Projects) === */
-    .list-section {
-      width: 300px; /* Fixed width for each box */
-      background: rgba(0, 0, 0, 0.4); /* Semi-transparent black background */
-      padding: 20px; /* Space inside the box */
-      border-radius: 10px; /* Rounded corners */
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow around the box */
-      margin-bottom: 20px; /* Space below for wrapping */
-      margin: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: var(--green-100);
-      color: var(--text-dark);
-      line-height: 1.6;
-    }
-
-    .hero {
-      background: linear-gradient(135deg, rgba(31, 58, 37, 0.92), rgba(77, 138, 89, 0.9));
-      color: var(--white);
-      padding: 4rem 1.2rem;
-      text-align: center;
-    }
-
-    .hero h1 {
-      margin: 0;
-      font-size: clamp(2rem, 6vw, 3.2rem);
-      letter-spacing: 0.02em;
-    }
-
-    .hero p {
-      max-width: 780px;
-      margin: 1rem auto 0;
-      font-size: 1.08rem;
-    }
-
-    .hero .cta {
-      display: inline-block;
-      margin-top: 1.4rem;
-      background: var(--white);
-      color: var(--green-900);
-      text-decoration: none;
-      padding: 0.75rem 1.15rem;
-      border-radius: 999px;
-      font-weight: 700;
-    }
-
-    main {
-      width: min(1100px, 92vw);
-      margin: 2.2rem auto 3.5rem;
-    }
-
-    .card {
-      background: var(--white);
-      border-radius: 14px;
-      padding: 1.4rem;
-      box-shadow: 0 10px 24px rgba(18, 45, 29, 0.08);
-      margin-bottom: 1.1rem;
-    }
-
-    h2 {
-      border-bottom: 1px solid #fff; /* Adds a line under the heading */
-      padding-bottom: 5px; /* Space between heading text and line */
-      margin: 0 0 0.75rem;
-      color: var(--green-900);
-      font-size: 1.45rem;
-    }
-
-    ul {
-      list-style-type: none; /* Removes bullet points */
-      padding-left: 0; /* Removes default left padding */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 0.8rem;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-    }
-
-    li {
-      margin: 10px 0; /* Space between list items */
-    .services li {
-      background: #edf5ee;
-      border-left: 5px solid var(--green-500);
-      border-radius: 8px;
-      padding: 0.65rem 0.7rem;
-      font-weight: 600;
-    }
-
-    a {
-      color: #fff; /* Link color set to white */
-      text-decoration: none; /* Removes underline by default */
-    .review-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 0.9rem;
-    }
-
-    a:hover {
-      text-decoration: underline; /* Underline links when hovered */
-    blockquote {
-      margin: 0;
-      padding: 0.95rem;
-      border-left: 4px solid var(--green-500);
-      background: #f8fbf8;
-      border-radius: 8px;
-    }
-
-    blockquote p { margin: 0 0 0.6rem; }
-    cite {
-      font-style: normal;
-      font-weight: 700;
-      color: var(--green-700);
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 0.75rem;
-    }
-
-    .gallery img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 8px 16px rgba(18, 45, 29, 0.12);
-      background: #dce8dd;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      color: #34533a;
-      font-weight: 600;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A.Roth Landscaping LLC</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <!-- Header Section with Name -->
-  <div class="header-box">
-    <h1>Thomas Cornell</h1>
+
+<body class="font-sans text-gray-800">
+
+<!-- NAVBAR -->
+<header class="fixed top-0 w-full bg-white shadow z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+    <h1 class="text-xl font-bold text-green-700">A.Roth Landscaping</h1>
+    <nav class="hidden md:flex space-x-6">
+      <a href="#services" class="hover:text-green-600">Services</a>
+      <a href="#about" class="hover:text-green-600">About</a>
+      <a href="#gallery" class="hover:text-green-600">Portfolio</a>
+      <a href="#contact" class="hover:text-green-600">Contact</a>
+    </nav>
+    <a href="#contact" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">Free Estimate</a>
   </div>
+</header>
 
-  <!-- Main Content Section with Links and Projects -->
-  <div class="container">
-    <!-- Links Section -->
-    <div class="list-section">
-      <h2>Links</h2>
-      <ul>
-        <li><a href="https://www.linkedin.com/in/thcornell/">LinkedIn</a></li>
-        <li><a href="https://github.com/thcornell">GitHub</a></li>
-      </ul>
-    </div>
+<!-- HERO -->
+<section class="relative h-screen flex items-center">
+  <img src="https://images.unsplash.com/photo-1597262975002-c5c3b14bbd62" 
+       class="absolute w-full h-full object-cover" />
 
-    <!-- Projects Section -->
-    <div class="list-section">
-      <h2>Projects</h2>
-      <ul>
-        <li><a href="#">Password Criteria Checker</a>
-        <li><a href="#">Project 2 (Coming Soon)</a></li>
-  <header class="hero">
-    <h1>A.Roth Landscaping LLC</h1>
-    <p>
-      Proudly serving Dutchess County for all your landscape needs. We offer mowing,
-      mulching, hedge trimming, hauling, clean ups, and landscape design.
-      We are a licensed and insured company.
+  <!-- overlay -->
+  <div class="absolute inset-0 bg-black/40"></div>
+
+  <!-- angled green shape -->
+  <div class="absolute inset-0 bg-green-700 opacity-90 clip-path"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-6 text-white">
+    <h2 class="text-4xl md:text-6xl font-bold mb-4">
+      Transform Your Outdoor Space
+    </h2>
+    <p class="text-lg mb-6 max-w-xl">
+      Professional landscaping services in Dutchess County. Reliable, detail-focused, and built to impress.
     </p>
-    <a class="cta" href="#contact">Get a Free Estimate</a>
-  </header>
-
-  <main>
-    <section class="card">
-      <h2>Our Services</h2>
-      <ul class="services">
-        <li>Mowing</li>
-        <li>Mulching</li>
-        <li>Hedge Trimming</li>
-        <li>Hauling</li>
-        <li>Seasonal Clean Ups</li>
-        <li>Landscape Design</li>
-      </ul>
+    <div class="flex gap-4">
+      <a href="#contact" class="bg-white text-green-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200">
+        Get a Free Estimate
+      </a>
+      <a href="#gallery" class="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-green-700">
+        View Our Work
+      </a>
     </div>
   </div>
-    </section>
+</section>
 
-    <section class="card">
-      <h2>Customer Reviews</h2>
-      <div class="review-grid">
-        <blockquote>
-          <p>"We have always been very pleased. Austin cleared our overgrown hill and made it beautiful in just a few hours."</p>
-          <cite>— Robert Lang</cite>
-        </blockquote>
-        <blockquote>
-          <p>"I needed a very large Burning Bush trimmed and I could not have been happier with the job and the cost."</p>
-          <cite>— Colleen Conn</cite>
-        </blockquote>
-        <blockquote>
-          <p>"This is the second project I have used Austin for. Both times I was absolutely thrilled with the exceptional work."</p>
-          <cite>— Joe Tassone</cite>
-        </blockquote>
-        <blockquote>
-          <p>"Austin got back to us right away, was very professional, and did a huge job for us."</p>
-          <cite>— Michael Davis</cite>
-        </blockquote>
-        <blockquote>
-          <p>"A.Roth Landscaping helped remove rock, deliver topsoil, level, grade, and seed our yard with great results."</p>
-          <cite>— Tory G</cite>
-        </blockquote>
-        <blockquote>
-          <p>"He's professional, personable, fairly priced, and does great mowing, trimming, and final cleanup."</p>
-          <cite>— Vinny Rubeo</cite>
-        </blockquote>
-        <blockquote>
-          <p>"Hard worker, detail oriented, and goes above and beyond. I highly recommend his work!"</p>
-          <cite>— Julia Trojan</cite>
-        </blockquote>
+<style>
+.clip-path {
+  clip-path: polygon(0 0, 65% 0, 45% 100%, 0% 100%);
+}
+</style>
+
+<!-- SERVICES -->
+<section id="services" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto text-center">
+    <h3 class="text-3xl font-bold mb-10">Our Services</h3>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg">Lawn Maintenance</div>
+      <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg">Mulching</div>
+      <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg">Hedge Trimming</div>
+      <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg">Seasonal Cleanups</div>
+      <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg">Hauling</div>
+      <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg">Landscape Design</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-20">
+  <div class="max-w-5xl mx-auto text-center">
+    <h3 class="text-3xl font-bold mb-6">About Us</h3>
+    <p class="text-lg text-gray-600">
+      A.Roth Landscaping LLC is proudly serving Dutchess County for all your landscape needs.
+      We are a licensed and insured company focused on reliability, fast response, and quality workmanship.
+      From routine lawn care to full landscape transformations, we deliver results you’ll love.
+    </p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto text-center">
+    <h3 class="text-3xl font-bold mb-10">Our Work</h3>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6" class="rounded-xl hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1558901357-ca41e027e43a" class="rounded-xl hover:scale-105 transition">
+      <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994" class="rounded-xl hover:scale-105 transition">
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="py-20">
+  <div class="max-w-7xl mx-auto text-center">
+    <h3 class="text-3xl font-bold mb-10">Why Choose Us</h3>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="p-6 bg-white shadow rounded-xl">Licensed & Insured</div>
+      <div class="p-6 bg-white shadow rounded-xl">Free Estimates</div>
+      <div class="p-6 bg-white shadow rounded-xl">Fast Response</div>
+      <div class="p-6 bg-white shadow rounded-xl">Professional Service</div>
+      <div class="p-6 bg-white shadow rounded-xl">Attention to Detail</div>
+      <div class="p-6 bg-white shadow rounded-xl">Fair Pricing</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto text-center">
+    <h3 class="text-3xl font-bold mb-10">What Our Clients Say</h3>
+
+    <div class="grid md:grid-cols-3 gap-6 text-left">
+      <div class="bg-white p-6 rounded-xl shadow">
+        “We have always been very pleased. He cleared our overgrown hill and made it beautiful.”
+        <p class="mt-4 font-semibold">— Colleen Conn</p>
       </div>
-    </section>
 
-    <section class="card">
-      <h2>Project Photos</h2>
-      <div class="gallery">
-        <img src="photo-trailer.jpg" alt="A.Roth Landscaping trailer" />
-        <img src="photo-lawn.jpg" alt="Freshly mowed green lawn" />
-        <img src="photo-hauling.jpg" alt="Hauling trailer at a landscaping site" />
-        <img src="photo-landscape-design.jpg" alt="Landscape design with shrubs and ornamental grass" />
+      <div class="bg-white p-6 rounded-xl shadow">
+        “Could not have been happier with the job and the cost. Great work.”
+        <p class="mt-4 font-semibold">— Joe Tassone</p>
       </div>
-      <p style="margin-top: 0.75rem;">Tip: add your photo files to this repository using the matching names shown above.</p>
-    </section>
 
-    <section id="contact" class="card">
-      <h2>Contact A.Roth Landscaping LLC</h2>
-      <p>Call today for a free estimate.</p>
-      <p><strong>Service Area:</strong> Dutchess County, New York</p>
-      <p><strong>Business:</strong> Licensed and insured</p>
-    </section>
-  </main>
+      <div class="bg-white p-6 rounded-xl shadow">
+        “Absolutely thrilled with the exceptional work.”
+        <p class="mt-4 font-semibold">— Michael Davis</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    © <span id="year"></span> A.Roth Landscaping LLC. All rights reserved.
-  </footer>
+<!-- CTA -->
+<section class="py-20 bg-green-700 text-white text-center">
+  <h3 class="text-3xl font-bold mb-4">Ready to Upgrade Your Outdoor Space?</h3>
+  <a href="#contact" class="bg-white text-green-700 px-6 py-3 rounded-lg font-semibold">
+    Request a Free Estimate
+  </a>
+</section>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<!-- CONTACT -->
+<section id="contact" class="py-20">
+  <div class="max-w-3xl mx-auto">
+    <h3 class="text-3xl font-bold text-center mb-8">Contact Us</h3>
+
+    <form class="space-y-4">
+      <input type="text" placeholder="Name" class="w-full p-3 border rounded-lg">
+      <input type="email" placeholder="Email" class="w-full p-3 border rounded-lg">
+      <input type="tel" placeholder="Phone" class="w-full p-3 border rounded-lg">
+      <textarea placeholder="Message" class="w-full p-3 border rounded-lg"></textarea>
+
+      <button class="w-full bg-green-700 text-white p-3 rounded-lg hover:bg-green-800">
+        Send Message
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-white text-center p-6">
+  <p>A.Roth Landscaping LLC • Dutchess County, NY</p>
+  <p class="text-sm text-gray-400 mt-2">© 2026 All Rights Reserved</p>
+</footer>
+
 </body>
 </html>
