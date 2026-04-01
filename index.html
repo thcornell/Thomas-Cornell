@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A. Roth Landscaping LLC | Dutchess County</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green-dark: #1a2e1a;
+      --green-mid: #2d5a27;
+      --green-light: #4a7c3f;
+      --green-accent: #6bab5e;
+      --cream: #f4efe6;
+      --tan: #d8cbb5;
+      --warm-white: #faf8f4;
+      --brown: #5c3d1e;
+      --text-dark: #1c1c1c;
+      --text-mid: #444;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--warm-white);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 3rem;
+      background: rgba(26,46,26,0.96);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--cream);
+      letter-spacing: 0.03em;
+      line-height: 1.2;
+    }
+    .nav-logo span { color: var(--green-accent); font-style: italic; }
+
+    .nav-links { display: flex; gap: 2.2rem; }
+    .nav-links a {
+      color: var(--tan);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--green-accent); }
+
+    .nav-cta {
+      background: var(--green-accent);
+      color: var(--green-dark) !important;
+      padding: 0.55rem 1.4rem;
+      border-radius: 2px;
+    }
+    .nav-cta:hover { background: #7ec870 !important; color: var(--green-dark) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 8rem;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(to bottom, rgba(10,22,10,0.55) 0%, rgba(20,40,15,0.3) 60%, rgba(26,46,26,0.85) 100%),
+        url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80') center/cover no-repeat;
+    }
+
+    .hero-text {
+      max-width: 720px;
+      margin-left: 8vw;
+      animation: fadeUp 1s ease both;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--green-accent);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      line-height: 1.05;
+      color: var(--cream);
+      margin-bottom: 1.6rem;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--green-accent);
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: rgba(244,239,230,0.85);
+      max-width: 500px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--green-accent);
+      color: var(--green-dark);
+      font-weight: 700;
+      font-size: 0.88rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 1rem 2.2rem;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: #7ec870; transform: translateY(-2px); }
+
+    .btn-outline {
+      display: inline-block;
+      border: 2px solid rgba(244,239,230,0.5);
+      color: var(--cream);
+      font-weight: 700;
+      font-size: 0.88rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 1rem 2.2rem;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--green-accent); color: var(--green-accent); }
+
+    .hero-badge {
+      position: absolute;
+      bottom: 3rem; right: 6vw;
+      width: 120px; height: 120px;
+      background: var(--green-accent);
+      border-radius: 50%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      animation: spinSlow 18s linear infinite;
+      color: var(--green-dark);
+    }
+    .hero-badge strong { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1.3; }
+    .hero-badge span { font-size: 0.6rem; opacity: 0.8; }
+
+    /* ── RIBBON ── */
+    .ribbon {
+      background: var(--green-mid);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .ribbon-item {
+      color: var(--cream);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .ribbon-item::before {
+      content: '✦';
+      color: var(--green-accent);
+      font-size: 0.7rem;
+    }
+
+    /* ── ABOUT ── */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 500px;
+    }
+
+    .about-img {
+      background: url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=900&q=80') center/cover no-repeat;
+      min-height: 420px;
+    }
+
+    .about-content {
+      background: var(--green-dark);
+      padding: 6rem 5rem 6rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .section-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--green-accent);
+      margin-bottom: 1rem;
+    }
+
+    .about-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      color: var(--cream);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-content p {
+      color: rgba(244,239,230,0.8);
+      font-size: 1rem;
+      line-height: 1.8;
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+
+    .about-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .tag {
+      border: 1px solid rgba(107,171,94,0.5);
+      color: var(--green-accent);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      border-radius: 2px;
+    }
+
+    /* ── SERVICES ── */
+    .services {
+      padding: 7rem 8vw;
+      background: var(--cream);
+    }
+
+    .services-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .services-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--green-dark);
+      margin-top: 0.5rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--warm-white);
+      border: 1px solid rgba(0,0,0,0.07);
+      padding: 2.5rem 2rem;
+      border-radius: 3px;
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      cursor: default;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(26,46,26,0.1);
+      border-color: var(--green-accent);
+    }
+
+    .service-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--green-dark);
+      margin-bottom: 0.6rem;
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    /* ── REVIEWS ── */
+    .reviews {
+      background: var(--green-dark);
+      padding: 7rem 8vw;
+    }
+
+    .reviews-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .reviews-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--cream);
+      margin-top: 0.5rem;
+    }
+
+    .stars { color: var(--green-accent); font-size: 1rem; letter-spacing: 2px; }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .review-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(107,171,94,0.2);
+      padding: 2rem;
+      border-radius: 3px;
+      transition: background 0.2s;
+    }
+    .review-card:hover { background: rgba(255,255,255,0.08); }
+
+    .review-stars { color: var(--green-accent); font-size: 0.9rem; margin-bottom: 1rem; }
+
+    .review-text {
+      font-size: 0.93rem;
+      color: rgba(244,239,230,0.8);
+      line-height: 1.75;
+      font-style: italic;
+      margin-bottom: 1.2rem;
+    }
+
+    .reviewer-name {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--green-accent);
+    }
+
+    /* ── CTA STRIP ── */
+    .cta-strip {
+      background: var(--green-accent);
+      padding: 5rem 8vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .cta-strip h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: var(--green-dark);
+      max-width: 500px;
+    }
+
+    .btn-dark {
+      display: inline-block;
+      background: var(--green-dark);
+      color: var(--cream);
+      font-weight: 700;
+      font-size: 0.88rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 1.1rem 2.5rem;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .btn-dark:hover { background: #0e1a0e; transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0e1a0e;
+      padding: 3.5rem 8vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-brand {
+      font-family: 'Playfair Display', serif;
+      color: var(--cream);
+      font-size: 1.1rem;
+    }
+    .footer-brand span { color: var(--green-accent); font-style: italic; }
+
+    .footer-info {
+      text-align: center;
+      color: rgba(244,239,230,0.5);
+      font-size: 0.8rem;
+      line-height: 1.8;
+    }
+
+    .footer-badge {
+      font-size: 0.75rem;
+      color: rgba(244,239,230,0.5);
+      text-align: right;
+      line-height: 1.8;
+    }
+    .footer-badge strong { color: var(--green-accent); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero-text { margin-left: 5vw; margin-right: 5vw; }
+      .about { grid-template-columns: 1fr; }
+      .about-content { padding: 4rem 2rem; }
+      .hero-badge { display: none; }
+      .cta-strip { flex-direction: column; text-align: center; }
+      footer { flex-direction: column; text-align: center; }
+      .footer-badge { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo"><span>A. Roth</span> Landscaping LLC</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact" class="nav-cta">Free Estimate</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Dutchess County's Trusted Landscapers</p>
+      <h1>Your yard,<br><em>beautifully</em><br>cared for.</h1>
+      <p class="hero-desc">A. Roth Landscaping LLC delivers expert lawn care, clean-ups, design, and more — with the professionalism and personal touch your property deserves.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-primary">Get a Free Estimate</a>
+        <a href="#services" class="btn-outline">Our Services</a>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <strong>Licensed &amp; Insured</strong>
+      <span>Dutchess County</span>
+    </div>
+  </section>
+
+  <!-- RIBBON -->
+  <div class="ribbon">
+    <div class="ribbon-item">Mowing</div>
+    <div class="ribbon-item">Mulching</div>
+    <div class="ribbon-item">Hedge Trimming</div>
+    <div class="ribbon-item">Hauling</div>
+    <div class="ribbon-item">Clean Ups</div>
+    <div class="ribbon-item">Landscape Design</div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-img"></div>
+    <div class="about-content">
+      <p class="section-eyebrow">Who We Are</p>
+      <h2>Proudly Serving<br>Dutchess County</h2>
+      <p>
+        A. Roth Landscaping LLC is a locally owned and operated company dedicated to delivering high-quality landscape services to homeowners and properties throughout Dutchess County. We're licensed, insured, and committed to doing the job right — every time.
+      </p>
+      <p>
+        Whether you need a routine mow, a major clean-up, or a full landscape design, Austin brings professionalism, craftsmanship, and a genuine care for your property.
+      </p>
+      <div class="about-tags">
+        <span class="tag">Licensed</span>
+        <span class="tag">Insured</span>
+        <span class="tag">Locally Owned</span>
+        <span class="tag">Free Estimates</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="services-header">
+      <p class="section-eyebrow" style="color:var(--green-mid)">What We Do</p>
+      <h2>Our Services</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-icon">🌿</span>
+        <h3>Lawn Mowing</h3>
+        <p>Reliable, consistent mowing with clean edges and a polished finish every visit.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🍂</span>
+        <h3>Mulching</h3>
+        <p>Fresh mulch applied to protect your beds, retain moisture, and sharpen the look of your landscaping.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">✂️</span>
+        <h3>Hedge Trimming</h3>
+        <p>Precise shaping and trimming of hedges, shrubs, and bushes to keep them healthy and attractive.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🚛</span>
+        <h3>Hauling</h3>
+        <p>Debris, brush, and yard waste hauled away so your property stays clean and clear.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🧹</span>
+        <h3>Clean Ups</h3>
+        <p>Spring and fall clean-ups, overgrown areas cleared, and full property refreshes done right.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🌱</span>
+        <h3>Landscape Design</h3>
+        <p>Creative and practical design solutions to transform your outdoor spaces into something special.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="reviews-header">
+      <p class="section-eyebrow">What Customers Say</p>
+      <h2>Don't Take Our Word For It</h2>
+      <div class="stars" style="margin-top:0.8rem; font-size:1.2rem;">★★★★★</div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Today, Austin did a wonderful job on our overgrown hill. He cleared it and it is now beautiful — and he did it all in just a few hours."</p>
+        <p class="reviewer-name">Robert Lang</p>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I could not have been happier with the job and the cost. Austin did a wonderful job and did it at a great price."</p>
+        <p class="reviewer-name">Colleen Conn</p>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Both times I was absolutely thrilled with the exceptional work done by Austin. I won't hesitate to use him again."</p>
+        <p class="reviewer-name">Joe Tassone</p>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"He was the only one who got back to us right away. Very professional and very knowledgeable — a total breath of fresh air."</p>
+        <p class="reviewer-name">Michael Davis</p>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"He goes above and beyond! Hard worker, very detail oriented. What a pleasure having Austin here. I would highly recommend his work!"</p>
+        <p class="reviewer-name">Julia Trojan</p>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Austin has been doing our lawn for a few years now. Professional, personable, and fairly priced. What more could you ask for?"</p>
+        <p class="reviewer-name">Vinny Rubeo</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="cta-strip" id="contact">
+    <h2>Ready for a beautiful yard? Call us today for a <em style="font-style:italic">free estimate.</em></h2>
+    <a href="tel:+1" class="btn-dark">📞 Call for a Free Estimate</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand"><span>A. Roth</span> Landscaping LLC</div>
+    <div class="footer-info">
+      Serving Dutchess County, NY<br>
+      Licensed &amp; Insured
+    </div>
+    <div class="footer-badge">
+      <strong>★★★★★</strong><br>
+      5-Star Rated on Google
+    </div>
+  </footer>
+
+</body>
+</html>
